@@ -14,10 +14,15 @@ var currentWeather = {};
 var weatherForecast ={};
 var APIKey = "9606aff55a0bd3e2295b059c842b1f5d";
   
+
+// function to create a pull request from API for the current weather
   currentWeather.fetchWeather = function(city) {
     // var APIKey = "9606aff55a0bd3e2295b059c842b1f5d";
 
    var currentWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
+
+   console.log(currentWeatherURL);
+
    fetch(currentWeatherURL)
       .then(function(response) {
         return response.json();
@@ -25,14 +30,16 @@ var APIKey = "9606aff55a0bd3e2295b059c842b1f5d";
       .then(function(data) {
         console.log(data);
 
-        var cityLat = data.coord.lat;
-        var cityLon = data.coord.lon;
+        var cityLon = data.city.coord.lon;
+        var cityLat = data.city.coord.lat;
 
         currentWeather.displayWeather(data);
-        weatherForecast.fetchWeatherForecast(city, cityLat, cityLon);
+        weatherForecast.fetchWeatherForecast(cityLat, cityLon);
       });
+      
   };
   
+  // function to display current weather
   currentWeather.displayWeather = function(data) {
     var name = data.name;
     var dt = data.dt;
@@ -54,16 +61,18 @@ var APIKey = "9606aff55a0bd3e2295b059c842b1f5d";
       "url('https://source.unsplash.com/1600x900/?' + name + '')";
   };
 
-
+// search funtction tof the current weather
   currentWeather.search = function() {
     currentWeather.fetchWeather(document.querySelector(".search-bar").value);
   };
 
 
+  // function to create a pull request from API for the 5 days weather forecats
   weatherForecast.fetchWeatherForecast = function(cityLon, cityLat) {
     // var APIKey = "9606aff55a0bd3e2295b059c842b1f5d";
 
-    var weatherForecastURL = "https://api.openweathermap.org/data/2.5/forecast?${cityLat}&lon=${cityLon}&units=imperial&appid=" + APIKey;
+    var weatherForecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + cityLat + "&lon=" + cityLon + "&units=imperial&appid=" + APIKey;
+    console.log(weatherForecastURL);
     
     fetch(weatherForecastURL)
     .then(function(weatherForecastURLresponse) {
@@ -75,6 +84,7 @@ var APIKey = "9606aff55a0bd3e2295b059c842b1f5d";
     });
   },
   
+// function to display the 5-day weatherfore cats
   weatherForecast.displayWeatherForecast = function(data) {
     var forecast = data.list;
     for (var i = 0; i < forecast.length; i += 8) {
@@ -96,12 +106,12 @@ var APIKey = "9606aff55a0bd3e2295b059c842b1f5d";
     }
   },
   
-  
+  // search funtction for the 5-day weather forecast
     weatherForecast.search = function() {
         weatherForecast.fetchWeatherForecast(document.querySelector(".search-bar").value);
   };
 
-  
+  // Event Listener for the Search Button
   document.querySelector(".searchBtn").addEventListener("click", function() {
     currentWeather.search();
     weatherForecast.search();

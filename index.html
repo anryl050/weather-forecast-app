@@ -15,78 +15,112 @@
 
 
 </head>
-<body >
+<body>
     <header class="d-flex justify-content-center bg-primary py-3">
         <h1 class="app-title"><i class="fab fa-github"></i>Weather Dashboard</h1>
     </header>
 
-    <main class="">
-        <section class="vh-50 d-flex justify-content-center">
 
+
+    <main>
+        <section class="vh-50 d-flex justify-content-center">
             <div class="container py-2 h-50 searchResults col-3 col-sm-3" >
-                <div class="row d-flex justify-content-center gap-15 h-50">
-                   
-                   <!-- need to modify this ti make it larger and add it to the class up top 
-                        <div class="col-md-8 col-lg-6 col-xl-4">
-                    -->                   
-                        <div class="">
+                <div class=" weather-search row d-flex justify-content-center gap-15 h-50">
                         <h2>Check Weather</h2>
             
                         <!-- Seacrh bar -->
-                            <div class="card-body" id="search-city-result input-group rounded mb-2">
+                            <div class="search card-body input-group" id="input-group rounded mb-2">
                                 <span>
-                                <input type="search" class="form-control rounded" placeholder="Enter City Name" aria-label="Search"
-                                aria-describedby="search-addon"/>
-                                <button class="input-group rounded mb-2 "> Search</button>
+                                <input type="search" class="search-bar form-control rounded" placeholder="Enter City Name" aria-label="Search"/>
+                                <button class=" searchBtn input-group rounded mb-2"> Search</button>
                                 </span>
                             </div>
                         
                         <!-- Section for the Seacrged Cities to display in -->
-                            <div class="card shadow-0 border ">
-                                <div class="card-body p-4" id="search-city-result">
-                                    <div class="d-flex flex-row align-items-center">
-                                    <p class="mb-0 me-3"></p>
-                                    <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
-                                </div>          
-                                </div>
-                            </div>
-                        </div>
-                    
+                            <div class="card shadow-0 border card-body p-4">
+                            </div>                    
                 </div>
             </div>
 
             <div class="container py-2 h-50 column 5-day-weather">
+
+              <!-- Current Weather Display -->
                 <div class="row d-flex justify-content-center">
-                    <h2>Current Weather</h2>
-                    <!-- need to modify this ti make it larger and add it to the class up top 
-                        <div class="col-md-8 col-lg-6 col-xl-4">
-                    -->
-                    <div class="card shadow-0 border ">
-                        <div class="card-body p-2">
-                            <h4 class="mb-1 sfw-normal" id="search-city-result">New York</h4>
-                            <p class="mb-2">Temperature: <strong></strong></p>
-                            <p class="mb-2">Wind: <strong></strong></p>
-                            <p class="mb-2">Humidity: <strong></strong></p>
-                
-                            <div class="d-flex flex-row align-items-center">
-                                <p class="mb-0 me-4">Scattered Clouds</p>
-                                <i class="fas fa-cloud fa-3x" style="color: #eee;"></i>
-                            </div>
-                        </div>
+                    <div class=" current-weather card shadow-0 border card-body p-2">
+                      <h4 class="city mb-1 sfw-normal"></h4>
+                      <h6 class="date">Date:</h6>
+                      <p class="temp mb-2">Temperature:</p>
+                      <p class="wind mb-2">Wind:</p>
+                      <p class="humidity mb-2">Humidity:</p>
+                      <img src="" alt="" class="icon" width="100px">
+                      <p class="description mb-0 me-4">Scattered Clouds</p>
                     </div>           
                 </div>
 
-                <div class="row d-flex justify-content-center">
-                   
+              <!-- 5-Day Weather Forecast -->  
+                <div class="weather-forecast row d-flex justify-content-center">
                     <h2>5-Day Forecast </h2>
                     <div class="col-auto me-auto">
-                        <div class="card" style="color: #4B515D; border-radius: 35px;">
-                          <div class="card-body">
-                
-                            <div class="d-flex">
-                              <h6>Date: 10/23/2023</h6>
-                            </div>
-                            <div class="d-flex flex-column text-center mt-4 mb-3">
+                      <div class="card card-body" id="weather-forecast" style="color: #4B515D; border-radius: 35px;">
+                        <h6 class="date">02/06/2023</h6>
+                        <p class="temp mb-2">32.0 F</p>
+                        <p class="speed mb-2">6.2 mph</p>
+                        <p class="humidity mb-2">98%</p>
+                        <img src="" alt="" class="icon">
+                        <p class="description mb-0 me-2">Scattered Clouds</p>
+                      </div>
+                    </div>
+
+                    <div class="col-auto me-auto">
+                      <div class="card card-body" id="weather-forecast" style="color: #4B515D; border-radius: 35px;">
+                        <h6 class="date">02/06/2023</h6>
+                        <p class="temp mb-2">32.0 F</p>
+                        <p class="speed mb-2">6.2 mph</p>
+                        <p class="humidity mb-2">98%</p>
+                        <img src="" alt="" class="icon">
+                        <p class="description mb-0 me-2">Scattered Clouds</p>
+                      </div>
+                    </div>
+
+                    <div class="col-auto me-auto">
+                      <div class="card card-body" id="weather-forecast" style="color: #4B515D; border-radius: 35px;">
+                        <h6 class="date">02/06/2023</h6>
+                        <p class="temp mb-2">32.0 F</p>
+                        <p class="speed mb-2">6.2 mph</p>
+                        <p class="humidity mb-2">98%</p>
+                        <img src="" alt="" class="icon">
+                        <p class="description mb-0 me-2">Scattered Clouds</p>
+                      </div>
+                    </div>
+
+                    <div class="col-auto me-auto">
+                      <div class="card card-body" id="weather-forecast" style="color: #4B515D; border-radius: 35px;">
+                        <h6 class="date">02/06/2023</h6>
+                        <p class="temp mb-2">32.0 F</p>
+                        <p class="speed mb-2">6.2 mph</p>
+                        <p class="humidity mb-2">98%</p>
+                        <img src="" alt="" class="icon">
+                        <p class="description mb-0 me-2">Scattered Clouds</p>
+                      </div>
+                    </div>
+
+                    <div class="col-auto me-auto">
+                      <div class="card card-body" id="weather-forecast" style="color: #4B515D; border-radius: 35px;">
+                        <h6 class="date">02/06/2023</h6>
+                        <p class="temp mb-2">32.0 F</p>
+                        <p class="speed mb-2">6.2 mph</p>
+                        <p class="humidity mb-2">98%</p>
+                        <img src="" alt="" class="icon">
+                        <p class="description mb-0 me-2">Scattered Clouds</p>
+                      </div>
+                    </div>
+                    
+                    
+                    <!-- <div class="col-auto me-auto">
+                        <div class="col-auto me-auto card card-body" id="weather-forecast" style="color: #4B515D; border-radius: 35px;">
+                   
+                            <div class="d-flex flex-column text-center mt-2 mb-3">
+                                <h6 class="date">Date:</h6>
                                 <h6 class="display-6 mb-0 font-weight-bold" style="color: #1C2331;"> 13°C </h6>
                                 <span class="small" style="color: #868B94">Stormy</span>
                             </div>
@@ -94,149 +128,27 @@
                                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
                                 width="50px">
                             </div>
-                            
                             <div class="d-flex text-center align-items-center">
-                              <div class="flex-grow-1" style="font-size: 1rem;">
-                                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 40 km/h
-                                  </span></div>
-                                <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 84% </span>
-                                </div>
+                              <div class="flex-grow-1 fas fa-wind fa-fw " style="font-size: 1rem; color: #1C2331;">
+                                <div><span class="ms-1"> 40 km/h </span></div>
+                                <div><span class="ms-1"> 84% </span></div>
                               </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
+                      </div> -->
 
-                      <div class="col-auto me-auto">
-                        <div class="card" style="color: #4B515D; border-radius: 35px;">
-                          <div class="card-body">
-                
-                            <div class="d-flex">
-                              <h6>Date: 10/23/2023</h6>
-                            </div>
-                            <div class="d-flex flex-column text-center mt-4 mb-3">
-                                <h6 class="display-6 mb-0 font-weight-bold" style="color: #1C2331;"> 13°C </h6>
-                                <span class="small" style="color: #868B94">Stormy</span>
-                            </div>
-                            <div class="d-flex text justify-content-center">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
-                                width="50px">
-                            </div>
-                            
-                            <div class="d-flex text-center align-items-center">
-                              <div class="flex-grow-1" style="font-size: 1rem;">
-                                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 40 km/h
-                                  </span></div>
-                                <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 84% </span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div class="col-auto me-auto">
-                        <div class="card" style="color: #4B515D; border-radius: 35px;">
-                          <div class="card-body">
-                
-                            <div class="d-flex">
-                              <h6>Date: 10/23/2023</h6>
-                            </div>
-                            <div class="d-flex flex-column text-center mt-4 mb-3">
-                                <h6 class="display-6 mb-0 font-weight-bold" style="color: #1C2331;"> 13°C </h6>
-                                <span class="small" style="color: #868B94">Stormy</span>
-                            </div>
-                            <div class="d-flex text justify-content-center">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
-                                width="50px">
-                            </div>
-                            
-                            <div class="d-flex text-center align-items-center">
-                              <div class="flex-grow-1" style="font-size: 1rem;">
-                                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 40 km/h
-                                  </span></div>
-                                <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 84% </span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-auto me-auto">
-                        <div class="card" style="color: #4B515D; border-radius: 35px;">
-                          <div class="card-body">
-                
-                            <div class="d-flex">
-                              <h6>Date: 10/23/2023</h6>
-                            </div>
-                            <div class="d-flex flex-column text-center mt-4 mb-3">
-                                <h6 class="display-6 mb-0 font-weight-bold" style="color: #1C2331;"> 13°C </h6>
-                                <span class="small" style="color: #868B94">Stormy</span>
-                            </div>
-                            <div class="d-flex text justify-content-center">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
-                                width="50px">
-                            </div>
-                            
-                            <div class="d-flex text-center align-items-center">
-                              <div class="flex-grow-1" style="font-size: 1rem;">
-                                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 40 km/h
-                                  </span></div>
-                                <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 84% </span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-auto me-auto">
-                        <div class="card" style="color: #4B515D; border-radius: 35px;">
-                          <div class="card-body">
-                
-                            <div class="d-flex">
-                              <h6>Date: 10/23/2023</h6>
-                            </div>
-                            <div class="d-flex flex-column text-center mt-4 mb-3">
-                                <h6 class="display-6 mb-0 font-weight-bold" style="color: #1C2331;"> 13°C </h6>
-                                <span class="small" style="color: #868B94">Stormy</span>
-                            </div>
-                            <div class="d-flex text justify-content-center">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp"
-                                width="50px">
-                            </div>
-                            
-                            <div class="d-flex text-center align-items-center">
-                              <div class="flex-grow-1" style="font-size: 1rem;">
-                                <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 40 km/h
-                                  </span></div>
-                                <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 84% </span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
+                      
 
                 </div>
             </div>
 
         </section>
 
-
-
-
     </main>
 
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script src="./Assets/script.js"></script>
 
 </body>
 </html>

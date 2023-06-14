@@ -1,40 +1,13 @@
 # Traveler's Guide to Weather
 
 ## Project Description
-The objective of the Challenge 6 was to use the concept of the XXXXXXXXXX to create a 5-Day Weather Application to retrieve the data for multiple cities.
+The objective of the Challenge 6 was to use the concept of the API to create a 5-Day Weather Application to retrieve the data for multiple cities.
 
 
 ## Application Summary
 Link to the deployed application: 
 
 To execute, the application needs to be opened in the browser.
-
-
-## 5-Day Weather Application
-
-GIF goes here
-
-
-
-### Summary
-- XXXXXXX
-
-Image
-
-
-
-- XXXXXXX
-
-Image
-
-
-
-
-- XXXXXXX
-
-Image
-
-
 
 ## Project's Acceptance Criteria
 
